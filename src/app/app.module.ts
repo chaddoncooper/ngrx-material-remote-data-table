@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
-import { MdPaginatorModule, MdSortModule, MdTableModule } from '@angular/material'
+import { MatPaginatorModule, MatSortModule, MatTableModule } from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppComponent } from './app.component'
 import { EffectsModule } from '@ngrx/effects'
@@ -21,9 +21,9 @@ import { JsonplaceholderModule } from 'app/core/jsonplaceholder/jsonplaceholder.
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([ LoadPhotosEffects ]),
 
-    MdTableModule,
-    MdPaginatorModule,
-    MdSortModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
 
     JsonplaceholderModule,
   ],

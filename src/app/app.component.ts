@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core'
-import { MdPaginator, MdSort, PageEvent, Sort } from '@angular/material'
+import { MatPaginator, MatSort, PageEvent, Sort } from '@angular/material'
 import { Store } from '@ngrx/store'
 import { AutoUnsubscribe } from 'ngx-auto-unsubscribe'
 
@@ -21,10 +21,10 @@ export class AppComponent implements OnInit {
   public displayedColumns = [ 'albumId', 'id', 'title', 'url', 'thumbnailUrl' ]
   public dataSource: JPPhotosDatasource
 
-  @ViewChild(MdPaginator)
-  public paginator: MdPaginator
-  @ViewChild(MdSort)
-  public sort: MdSort
+  @ViewChild(MatPaginator)
+  public paginator: MatPaginator
+  @ViewChild(MatSort)
+  public sort: MatSort
 
   private jpphotos$: Observable<IJPPhoto[]>
   private paginatorSubscription: Subscription = Subscription.EMPTY
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
     this.paginatorSubscription = this.paginator.page.subscribe((pageEvent: PageEvent) => {
       this.store.dispatch(new LoadPhotosRequestAction(pageEvent.pageIndex, pageEvent.pageSize))
     })
-    this.sortSubscription = this.sort.mdSortChange.subscribe((sort: Sort) => {
+    this.sortSubscription = this.sort.sortChange.subscribe((sort: Sort) => {
       // in case of sorting start with page 1 (pageIndex=0)
       this.store.dispatch(new LoadPhotosRequestAction(0, this.paginator.pageSize || 25, sort.active, sort.direction))
     })

@@ -1,40 +1,40 @@
 <div class="example-container mat-elevation-z8">
 
-  <md-table #table [dataSource]="dataSource" mdSort>
+  <mat-table #table [dataSource]="dataSource" matSort>
 
-    <ng-container mdColumnDef="albumId">
-      <md-header-cell *mdHeaderCellDef md-sort-header>Album ID</md-header-cell>
-      <md-cell *mdCellDef="let row">{{ row.albumId }}</md-cell>
+    <ng-container matColumnDef="albumId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Album ID</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.albumId }}</mat-cell>
     </ng-container>
 
-    <ng-container mdColumnDef="id">
-      <md-header-cell *mdHeaderCellDef md-sort-header>ID</md-header-cell>
-      <md-cell *mdCellDef="let row">{{ row.id }}</md-cell>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
     </ng-container>
 
-    <ng-container mdColumnDef="title">
-      <md-header-cell *mdHeaderCellDef md-sort-header>Title</md-header-cell>
-      <md-cell *mdCellDef="let row">{{ row.title }}</md-cell>
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.title }}</mat-cell>
     </ng-container>
 
-    <ng-container mdColumnDef="url">
-      <md-header-cell *mdHeaderCellDef md-sort-header>URL</md-header-cell>
-      <md-cell *mdCellDef="let row">{{ row.url }}</md-cell>
+    <ng-container matColumnDef="url">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>URL</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.url }}</mat-cell>
     </ng-container>
 
-    <ng-container mdColumnDef="thumbnailUrl">
-      <md-header-cell *mdHeaderCellDef md-sort-header>Thumbnail</md-header-cell>
-      <md-cell *mdCellDef="let row">{{ row.thumbnailUrl }}</md-cell>
+    <ng-container matColumnDef="thumbnailUrl">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Thumbnail</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.thumbnailUrl }}</mat-cell>
     </ng-container>
 
-    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
-    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
-  </md-table>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
 
-  <md-paginator #paginator
+  <mat-paginator #paginator
                 [length]="500"
                 [pageIndex]="0"
                 [pageSize]="25"
                 [pageSizeOptions]="[5, 10, 25, 100]">
-  </md-paginator>
+  </mat-paginator>
 </div>
